@@ -30,6 +30,7 @@ class CompanyInfoViewModel with ChangeNotifier {
             companyInfo: null, isLoading: false, errorMessage: e.toString());
       },
     );
+    _state = state.copyWith(isLoading: false);
     notifyListeners();
   }
 }

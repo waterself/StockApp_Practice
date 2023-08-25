@@ -30,11 +30,37 @@ class CompanyInfoScreen extends StatelessWidget {
   Widget _buildBody(CompanyInfo companyInfo) {
     return Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(children: [
-          Text(companyInfo.name),
-          Text(companyInfo.symbol),
-          Text(companyInfo.industy),
-          Text(companyInfo.country),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Text(
+            companyInfo.name,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 18,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+          Text(
+            companyInfo.symbol,
+            style: const TextStyle(
+              fontStyle: FontStyle.italic,
+            ),
+          ),
+          const Divider(),
+          Text(
+            "Industry: ${companyInfo.industy}",
+            style: const TextStyle(overflow: TextOverflow.ellipsis),
+          ),
+          Text(
+            companyInfo.country,
+            style: const TextStyle(
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+          const Divider(),
+          Text(
+            companyInfo.description,
+            style: const TextStyle(fontSize: 12),
+          )
         ]));
   }
 }

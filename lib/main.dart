@@ -5,6 +5,7 @@ import 'package:stock_app/data/repository/stock_repository_impl.dart';
 import 'package:stock_app/data/source/local/company_listing_entity.dart';
 import 'package:stock_app/data/source/local/stock_dao.dart';
 import 'package:stock_app/data/source/remote/stock_api.dart';
+import 'package:stock_app/domain/repository/stock_repository.dart';
 import 'package:stock_app/presentation/company_listings/company_listings_screen.dart';
 import 'package:stock_app/presentation/company_listings/company_listings_view_model.dart';
 import 'package:stock_app/utils/color_schemes.dart';
@@ -16,7 +17,7 @@ void main() async {
   Hive.registerAdapter(CompanyListingEntityAdapter());
   final repository = StockRepositoryImpl(StockApi(), StockDao());
 
-  GetIt.instance.registerSingleton<StockRepositoryImpl>(repository);
+  GetIt.instance.registerSingleton<StockRepository>(repository);
 
   runApp(MultiProvider(
     providers: [

@@ -54,7 +54,6 @@ class CompanyListingsScreen extends StatelessWidget {
                             builder: (context) {
                               final repository =
                                   GetIt.instance<StockRepository>();
-                              context.read<StockRepository>();
                               final symbol = state.companies[index].symbol;
                               return ChangeNotifierProvider(
                                 create: (context) =>
